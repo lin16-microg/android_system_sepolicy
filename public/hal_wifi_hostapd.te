@@ -11,6 +11,7 @@ allow hal_wifi_hostapd_server sysfs_net:dir search;
 
 # Allow hal_wifi_hostapd to access /proc/net/psched
 allow hal_wifi_hostapd_server proc_net:file { getattr open read };
+allow hal_wifi_hostapd_server proc_net_devroute:file { getattr open read };
 
 # Various socket permissions.
 allowxperm hal_wifi_hostapd_server self:udp_socket ioctl priv_sock_ioctls;

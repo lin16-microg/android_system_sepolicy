@@ -279,6 +279,7 @@ allow init self:global_capability2_class_set syslog;
 
 # init access to /proc.
 r_dir_file(init, proc_net)
+r_dir_file(init, proc_net_devroute)
 
 allow init {
   proc_cmdline
@@ -300,6 +301,7 @@ allow init {
   proc_hung_task
   proc_extra_free_kbytes
   proc_net
+  proc_net_devroute
   proc_max_map_count
   proc_min_free_order_shift
   proc_overcommit_memory
@@ -319,6 +321,7 @@ allow init {
   proc_cmdline
   proc_kmsg
   proc_net
+  proc_net_devroute
   proc_qtaguid_stat
   proc_slabinfo
   proc_sysrq
