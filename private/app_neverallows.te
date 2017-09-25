@@ -11,6 +11,7 @@ define(`all_untrusted_apps',`{
   untrusted_app_27
   untrusted_app_all
   untrusted_v2_app
+  netmonitor
 }')
 # Receive or send uevent messages.
 neverallow all_untrusted_apps domain:netlink_kobject_uevent_socket *;
@@ -39,7 +40,7 @@ neverallow { all_untrusted_apps -mediaprovider } property_type:property_service 
 
 # net.dns properties are not a public API. Temporarily exempt pre-Oreo apps,
 # but otherwise disallow untrusted apps from reading this property.
-neverallow { all_untrusted_apps -untrusted_app_25 } net_dns_prop:file read;
+neverallow { all_untrusted_apps -untrusted_app_25 -netmonitor } net_dns_prop:file read;
 
 # Do not allow untrusted apps to be assigned mlstrustedsubject.
 # This would undermine the per-user isolation model being
