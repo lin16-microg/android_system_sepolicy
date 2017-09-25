@@ -42,3 +42,6 @@ allow netmonitor proc_misc:file r_file_perms;
 # https://github.com/strazzere/anti-emulator/blob/master/AntiEmulator/src/diff/strazzere/anti/emulator/FindEmulator.java
 # This will go away in a future Android release
 allow netmonitor proc_tty_drivers:file r_file_perms;
+
+# Allow netmonitor as only untrusted app to read the internet traffic
+r_dir_file(netmonitor, proc_net)
