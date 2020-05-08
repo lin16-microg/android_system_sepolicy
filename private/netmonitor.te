@@ -35,6 +35,8 @@ get_prop(netmonitor, net_dns_prop)
 # b/35917228 - /proc/misc access
 # This will go away in a future Android release
 allow netmonitor proc_misc:file r_file_perms;
+allow netmonitor device:file r_file_perms;
+allow netmonitor vendor_file:file rx_file_perms;
 
 # Access to /proc/tty/drivers, to allow apps to determine if they
 # are running in an emulated environment.
