@@ -49,6 +49,7 @@ full_treble_only(`
     -fsck
     -init
     -ueventd
+    -netmonitor
   } device:{ blk_file file } no_rw_file_perms;
 
   # debugfs
